@@ -1,0 +1,9 @@
+{
+  "name": "locations",
+  "private": true,
+  "dependencies": {
+    "angular-material": "~0.8.3",
+    "components-font-awesome": "~4.3.0",
+    "angular-google-maps": "~2.0.19"
+  }
+}

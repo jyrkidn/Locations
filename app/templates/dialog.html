@@ -1,0 +1,53 @@
+<md-dialog aria-label="Login/Register">
+	<md-content>
+		<md-toolbar class="md-accent">
+			<h2 class="md-toolbar-tools">
+				<span>Login</span>
+			</h2>
+		</md-toolbar>
+		<md-content>
+			<form name="loginForm">
+				<div layout layout-sm="column">
+					<md-input-container flex>
+						<label>E-mail</label>
+						<input ng-model="user.email" placeholder="E-mail" type="email">
+					</md-input-container>
+					<md-input-container flex>
+						<label>Password</label>
+						<input ng-model="user.password" type="password">
+					</md-input-container>
+				</div>
+				<div layout="row" layout-align="end center">
+					<md-button class="md-raised md-primary">Login</md-button>
+				</div>
+			</form>
+		</md-content>
+		<md-toolbar class="md-accent">
+			<h2 class="md-toolbar-tools">
+				<span>Register</span>
+			</h2>
+		</md-toolbar>
+		<md-content>
+			<form name="registerForm">
+				<div layout layout-sm="column">
+					<md-input-container flex>
+						<label>First Name</label>
+						<input ng-model="user.firstName" placeholder="Placeholder text">
+					</md-input-container>
+					<md-input-container flex>
+						<label>Last Name</label>
+						<input ng-model="theMax">
+					</md-input-container>
+				</div>
+				<div layout="row" layout-align="end center">
+					<md-button class="md-raised md-primary">Register</md-button>
+				</div>
+			</form>
+		</md-content>
+	</md-content>
+	<div class="md-actions" layout="row">
+		<md-button ng-click="answer('cancel')">
+			Cancel
+		</md-button>
+	</div>
+</md-dialog>

@@ -1,0 +1,77 @@
+md-toolbar {
+	&.nav {
+		z-index: 61;
+	}
+}
+
+h1 {
+	&.md-primary {
+		color: rgb(103,58,183);
+	}
+}
+
+.nav {
+	.nav-button {
+		width: 30px;
+		height: 20px;
+		display: block;
+		margin: 0 0 0 10px;
+		transform: rotate(0deg);
+		transition: .5s ease-in-out;
+		cursor: pointer;
+		display: block;
+		flex: 0 30px auto;
+
+		span {
+			display: block;
+			position: absolute;
+			height: 3px;
+			width: 100%;
+			background: #ffffff;
+			opacity: 1;
+			left: 0;
+			transform: rotate(0deg);
+			transition: .3s ease-in-out;
+
+			&:nth-child(1) {
+				top: 0px;
+				transform-origin: left center;
+			}
+			&:nth-child(2) {
+				top: 8px;
+				transform-origin: left center;
+			}
+			&:nth-child(3) {
+				top: 16px;
+				transform-origin: left center;
+			}
+		}
+
+		&.isOpen {
+			span {
+				&:nth-child(1) {
+					transform: rotate(45deg);
+					top: -3px;
+					left: 3px;
+				}
+				&:nth-child(2) {
+					width: 0%;
+					opacity: 0;
+				}
+				&:nth-child(3) {
+					transform: rotate(-45deg);
+					top: 18px;
+					left: 3px;
+				}
+			}
+		}
+	}
+
+	.md-button.md-default-theme {
+		padding: 0 20px;
+	}
+}
+
+.angular-google-map-container {
+	height: 400px;
+}

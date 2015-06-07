@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" ng-app="locationsApp">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>locations</title>
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+	<!-- build:css styles/vendor.css -->
+	<!-- bower:css -->
+	<link rel="stylesheet" href="/bower_components/angular-material/angular-material.css" />
+	<link rel="stylesheet" href="/bower_components/components-font-awesome/css/font-awesome.css" />
+	<!-- endbower -->
+	<!-- endbuild -->
+
+	<!-- build:css styles/main.css -->
+	<link rel="stylesheet" href="styles/main.css">
+	<!-- endbuild -->
+</head>
+<body ng-controller="AppController" layout="column">
+	<md-toolbar layout="row" class="nav">
+		<button ng-click="toggleSidenav('left')" class="md-background md-button">
+			<div class="nav-button" ng-class="{'isOpen' : isOpen}">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</button>
+		<h1 class="md-toolbar-tools">
+			Locations
+		</h1>
+		<span flex></span>
+		<md-button ng-click="showAdvanced($event)" aria-label="Open dialog">
+			<i class="fa fa-user"></i>
+		</md-button>
+	</md-toolbar>
+	<div layout="row" flex>
+		<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2"
+		    md-component-id="left" md-is-open="isOpen">
+			<md-toolbar></md-toolbar>
+			<md-toolbar>
+				<h1 class="md-toolbar-tools">Home</h1>
+			</md-toolbar>
+			<md-divider></md-divider>
+			<md-toolbar>
+				<h1 class="md-toolbar-tools">My Locations</h1>
+			</md-toolbar>
+			<md-divider></md-divider>
+			<md-toolbar class="md-accent">
+				<h1 class="md-toolbar-tools">Add new location</h1>
+			</md-toolbar>
+			<md-divider></md-divider>
+			<md-toolbar class="md-accent">
+				<h1 class="md-toolbar-tools">My tags</h1>
+			</md-toolbar>
+		</md-sidenav>
+		<div layout="column" flex id="content">
+			<md-content layout="column" flex>
+				<div layout="row" layout-wrap>
+					<div flex="100">
+						<ui-gmap-google-map
+						    center="map.center"
+						    zoom="map.zoom"
+						    options="map.options">
+						</ui-gmap-google-map>
+					</div>
+					<div flex="100">
+						<h1 class="md-primary">Name</h1>
+						<h2>Tagline</h2>
+					</div>
+					<div flex="50" flex-sm="100">
+						<h2>Column 1</h2>
+					</div>
+					<div flex="50" flex-sm="100">
+						<h2>Column 2</h2>
+						{{isOpen}}
+					</div>
+					<div flex="100">
+						<h1 class="md-primary">Text</h1>
+						<h2>Tagline</h2>
+					</div>
+				</div>
+			</md-content>
+		</div>
+	</div>
+	<div layout="column" layout-align="end center">
+		<md-toolbar class="md-accent">
+			<h2 class="md-toolbar-tools">
+				<span>Footer</span>
+			</h2>
+		</md-toolbar>
+	</div>
+
+
+	<!-- build:js scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="/bower_components/angular/angular.js"></script>
+	<script src="/bower_components/angular-animate/angular-animate.js"></script>
+	<script src="/bower_components/angular-aria/angular-aria.js"></script>
+	<script src="/bower_components/angular-material/angular-material.js"></script>
+	<script src="/bower_components/lodash/dist/lodash.compat.js"></script>
+	<script src="/bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+
+	<!-- build:js scripts/main.js -->
+	<script src="scripts/app.js"></script>
+	<script src="scripts/controllers/AppController.js"></script>
+	<!-- endbuild -->
+</body>
+</html>
